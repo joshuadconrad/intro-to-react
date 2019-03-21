@@ -12,10 +12,17 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
      <script type="text/babel">
      class Greeting extends React.Component {
+              constructor(props){
+                super(props);
+                this.state = {
+                  year: 2019
+                }
+              }
               render() {
                 return (
                   <div>
                     <h1>Hello World!</h1>
+                    <h2>The year is: {this.state.year}</h2>
                   </div>
                 );
               }
@@ -29,9 +36,14 @@
             return(
               <div>
                 <p>My name is Joshua!</p>
+                <p>I live in {this.props.location}</p>
               </div>
             );
           }
+        }
+
+        Name.defaultProps = {
+          location: "St. Louis, Missouri"
         }
 
         ReactDOM.render(
